@@ -15,6 +15,7 @@ Git 동작순서
  Repository (Repo, 저장소) : 내 소스파일이 저장되는 공간
    - Remote에 있는 Repository가 있고, 내 PC 폴더는 local repository로 부름
    - 일반적으로 1개의 Repository는 1개의 프로젝트 단위로 만들게 됨.(반드시 그렇지 만은 아님)
+   https://evan-moon.github.io/2019/07/25/git-tutorial/ 참조하여 작성
  
   
 1. git 프로그램 install
