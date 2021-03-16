@@ -1,0 +1,13 @@
+Git 동작순서
+- Git 사용 목적 : 내 PC 에서 작업한 내용 (Local에서 작업한 내용이라고 표현)을 프로젝트 참여자들과 공동으로 작업하기 위하여
+  프로젝트 참여자 누구나 접근할 수 있는 공간(Remote 서버로 호칭)에 보내어 프로젝트참여자 상호간에 작업한 내용을 주고 받으면서
+  프로젝트가 마무리 될때까지 관리하는 과정을 가능하게 만드는 일련의 동작 순서
+1. git 프로그램 install
+2. github 계정만들기
+3. C: 에서 git 프로젝트에 사용할 폴더 만들기 (소스 등 파일이 상주하는 곳 예: gitexample)
+4. gitexample 폴더에서 Git Bash command 창 실행 (오른쪽 mouse 버튼 클릭하면 명령줄 나타남)
+5. Bash command 창에서 'git init' 실행 -> gitexample 폴더애 .git 폴더가 생성됨
+6. gitexample 폴더에서 예제파일을 만듦 (예로 example.txt 생성)
+7. 
+  프로젝트를 완료할 때까지 수정-upload-검토-download-수정-upload-검토-download-수정 하는 단계를 반복
+  
