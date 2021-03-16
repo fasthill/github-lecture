@@ -1,0 +1,4 @@
+1. Git의 기본 브랜치를 master에서 main으로 변경하기
+main branch와 master branch와 차이가 없음에 따라 (그냥 관례에 따라 사용)
+Github는 기본 브랜치를 master에서 main으로 변경하기로 하고 2020년 10월 1일부터 적용. 
+따라서 이제 저장소를 생성할 때 default로 main 브랜치가 기본브랜치로 생성됨.
