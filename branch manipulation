@@ -9,4 +9,7 @@ Github는 기본 브랜치를 master에서 main으로 변경하기로 하고 202
 C:\Program Files\Git\etc\gitconfig 나  ~/.gitconfig(C:\Users\User\.gitconfig) 파일 마지막부분에
 아래 내용 추가
   [init]
-        	defaultBranch = main
+       defaultBranch = main
+
+이후 작업하면서 프로젝트에서 branch 확인후 변환되어 있지 않으면 수동으로 설정 변경
+       
