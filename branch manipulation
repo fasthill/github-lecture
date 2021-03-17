@@ -2,6 +2,12 @@
 main branch와 master branch와 차이가 없음에 따라 (그냥 관례에 따라 사용하였으나 master/slave에 대한 용어적인 반감때문에)
 Github는 기본 브랜치를 master에서 main으로 변경하기로 하고 2020년 10월 1일부터 적용. (https://github.com/github/renaming)
 따라서 이제 저장소를 생성할 때 default로 main 브랜치가 기본브랜치로 생성됨.
+참조: “origin” 의 의미 (https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EB%B8%8C%EB%9E%9C%EC%B9%98)
+  브랜치 이름으로 많이 사용하는 “master” 라는 이름이 괜히 특별한 의미를 가지는 게 아닌 것처럼 
+  “origin” 도 특별한 의미가 있는 것은 아니다. 
+  git init 명령이 자동으로 만들기 때문에 사용하는 이름인 “master” 와 마찬가지로 
+  “origin” 도 git clone 명령이 자동으로 만들어주는 리모트 이름이다. 
+  - git clone -o booyah 라고 옵션을 주고 명령을 실행하면 booyah/master 라고 사용자가 정한 대로 리모트 이름을 생성해준다.
 다른 branch에서 main을 기본branch로 설정하기 위하여
  $ git branch -M main 사용
 
