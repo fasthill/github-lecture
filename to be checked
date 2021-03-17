@@ -1,0 +1,6 @@
+ ! [remote rejected] main -> main (permission denied)
+error: failed to push some refs to 'https://github.com/fasthill-sibling/hello_python.git'
+--> 내용확인하기
+
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
