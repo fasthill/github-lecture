@@ -4,3 +4,33 @@ error: failed to push some refs to 'https://github.com/fasthill-sibling/hello_py
 
 Your branch is ahead of 'origin/main' by 1 commit.
   (use "git push" to publish your local commits)
+  
+  소스를 수정하고 commit 한 후에 리모트 레파지토리에 수정사항이 생겨 다시 pull 받았더니 commit 이 두개로 생성되었다. (Your branch is ahead of 'origin/master' by 2 commits.)
+로그를 확인해보니 내가 commit 한 버전 1개와 리모트 소스를 pull 받으면서 생긴 merge commit이 추가로 생긴거였다. 처음부터 merge commit 을 남기지 않으려면 pull 받을때 --rebase 옵션을 주면 생기지 않는다고 한다. (git pull --rebase)
+내 경우에는 이미 merge commit이 생겨버려서 reset으로 2번째 전 commit으로 돌아가서 다시 진행했다.
+
+[ 진행순서 ]
+$ git commit -m [msg]
+$ git pull 
+> Your branch is ahead of 'origin/master' by 2 commits. 
+
+[ 해결 ]
+$ git reset HEAD^^ (2개 이전까지 commit 취소) > 변경된파일은 그대로 
+$ git add .
+$ git commit -m [msg]
+$ git push origin HEAD:refs/for/master 
+
+[ commit 취소명령 ]
+$ git reset HEAD^ : 마지막 커밋 취소 but, 변경한 파일은 그대로 존재 
+$ git reset --hard HEAD^ : 마지막 커밋 취소하고 변경전 파일로 복구
+$ git reset HEAD~n : 마지막 n개 커밋 취소 but, 변경한 파일은 그대로 존재 
+$ git reset --hard HEAD~n : 마지막 n개 커밋 취소하고 변경전 파일로 복구
+
+[ commit amend 옵션 ]
+- 코드리뷰 후 수정사항 반영할때 사용 (Change-Id는 유지, Commit-Id는 새로 생성)
+- 현재 브랜치의 마지막 커밋을 새로운 커밋으로 대체 (변경이력은 없어지지만 변경된내용은 누적)
+$ git commit --amend
+$ git push origin master 
+
+참고글 
+http://logonluv.blogspot.com/2015/02/git-commit-reset.html
