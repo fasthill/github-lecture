@@ -6,4 +6,5 @@
  3. https://www.slipp.net/wiki/pages/viewpage.action?pageId=5800002#Git-bash%EB%A5%BC%EC%82%AC%EC%9A%A9%ED%95%98%EB%A9%B0%EB%B0%9C%EC%83%9D%ED%95%9C%ED%95%9C%EA%B8%80%EA%B4%80%EB%A0%A8%EB%AC%B8%EC%A0%9C%EB%93%A4-gitstatus%EC%8B%9C%ED%95%9C%EA%B8%80%ED%8C%8C%EC%9D%BC%EB%AA%85%EA%B9%A8%EC%A7%90
 
 ○ warning: LF will be replaced by CRLF in f2.txt. git add 후에 이런 경고가 나올경우
- 1. git config --global core.autocrlf true  ← https://dabo-dev.tistory.com/13
+ 1. 'git config --global core.autocrlf input' (git bash 사용할 경우)  ← https://dabo-dev.tistory.com/13
+    윈도우 cmd 사용할 경우는 'git config --global core.autocrlf true'
