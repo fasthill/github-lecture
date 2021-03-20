@@ -21,3 +21,5 @@ git commit 후 nodepad++ 메모는 어디에 있나? 어떻게 다시 찾나?
 commit message는 고칠수 있나? 어떻게?
 local에서 main에서 git branch new_branch 하여 gif push origin new-branch 하는 것과 (이경우 main의 내용을 그대로 복사?함)
 remote origin main에서 new branch로 new_branch를 생성하는 것과의 차이는 무엇인가?
+
+bash한글표시 :  https://skysign.tistory.com/213
