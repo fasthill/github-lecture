@@ -21,3 +21,7 @@ Carriage Return (CR)
 프린터나 타자기에서 사용되던 개념인데, 컴퓨터의 텍스트 파일에서도 사용되고 있습니다.
 '커서를 아래로 내리는 동작'과 '커서의 행의 맨 앞으로 보내는 동작'을 합치면, 다음 줄로 행갈이가 됩니다.
 메모장 등에서, 엔터키를 치면 다음 줄로 내려갑니다. 이때 각 줄의 끝에 바로 이 행갈이 문자가 자동으로 붙습니다.
+
+
+$ git stash
+Saved working directory and index state WIP on exp: 58f20df 1  ← WIP : Working in Process
