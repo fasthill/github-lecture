@@ -24,3 +24,7 @@ remote origin main에서 new branch로 new_branch를 생성하는 것과의 차�
 
 bash한글표시 :  https://skysign.tistory.com/213 --> 안됨
 https://www.slipp.net/wiki/pages/viewpage.action?pageId=5800002  : 실무경험까지 있으니 반드시 읽어볼 것
+
+과거로 돌아가기 : reset, revert
+
+command  창에서 help 보기 not on web pages
