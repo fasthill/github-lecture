@@ -1,0 +1,3 @@
+1. git add 실행을 통하여 
+ - blob 객체 생성 ( 위치 : .git/objects direcory에 폴더형태로 구성됨 ( 폴더명 : SHA-1 앞 2자리) 내용 : file name = SHA-1, )
+ - index 생성 (staging area에 등록) ( .git/index directory에)
