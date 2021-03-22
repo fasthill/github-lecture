@@ -38,3 +38,10 @@
           author :
           committer:
           commit message :
+
+- git reset --hard commit-SHA1 을 하면 commit-SHA1상태로 돌아감.
+  commit 1, commit 2, commit 3, commit 4 였을 경우, git reset --hard commit 3을 하면 commit 3의 상태로 돌아감
+  . commit 4는 .git/ORIG_HEAD 파일에 일반 텍스트로 SHA-1이 그대로 남아 있음.
+  . .git/logs/HEAD에도 기록이 모두 남아 있음.
+  . .git/refs/heads/master에도 기록이 모두 남아 있음.
+  . .git/logs/refs/heads/master에도 기록이 모두 남아 있음. : master 브랜치에서 발생하는 주요한 사건들을 기록해 놓음
