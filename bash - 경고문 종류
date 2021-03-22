@@ -25,3 +25,10 @@ Carriage Return (CR)
 
 $ git stash
 Saved working directory and index state WIP on exp: 58f20df 1  ← WIP : Working in Process
+
+$ git branch exp
+fatal: Not a valid object name: 'master'.
+← branch 목록에 master도 나오지 않고 fatal: Not a valid object name: 'master'. 이라는 에러 메세지가 발생하면서 다른 branch 생성도 되지 않는다.
+이 이유는 master branch에서 최초의 commit을 하지 않았기 때문이다. 다른 분기를 만들기 위해서는 master에서 commit을 최소 1번은 해야한다.
+$ git checkout -b exp 일 경우 exp로 checkout이 되나 그 다음부터는 이동이 불가하게 됨. 위와 같은 현상이발생. 따라서 최소 1개 commit을 하고 진행해야 함.
+  다 지우고 git init을 실행해야 함. (최초에 나오는 에러이니 작업한 내용은 없을 것임)
