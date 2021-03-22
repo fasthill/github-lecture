@@ -27,6 +27,6 @@ https://www.slipp.net/wiki/pages/viewpage.action?pageId=5800002  : 실무경험�
 
 과거로 돌아가기 : reset, revert
 
-command  창에서 help 보기 not on web pages
+command  창에서 help 보기 not on web pages → git command --help는 www에서 실행, git command -help는 화면에서 실행 ('-' 가 한개, 두개 차이)
 
 폴더에서 자료를 확인하기 : branch 하는 것과 관계없이 파일을 확인하는 방법이 있는가?
