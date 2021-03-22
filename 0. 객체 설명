@@ -14,13 +14,13 @@
  - index 생성 = staging area 등록과 같은 의미
    내용 : blob 연계 SHA-1 ( = blob SHA-1)
    위치 : .git/index 파일에 blob 연계 SHA-1을 기록. 가장 최근의 SHA-1만 기록 (binary file로 등록)
-   . add 할때마다 기록됨
+   . add 할때마다 기록됨 (branch 별로 누적됨?? python으로 encoding확인 필요)
 
 2. commit 실행을 통하여
  - /logs/HEAD 파일에 commit SHA-1 및 commit author 이름, 이메일, 생성일자 정보 기록. 누적으로 기록 남김 (일반 텍스트)
    . git checkout 결과기록 포함
  - /logs/refs/heads/master 파일에 '/logs/HEAD 파일'과 같은 내용 생성. 누적으로 기록 남김
- - /refs/heads/master 파일에에 지금 생성된 commit을 포인팅하는 commit 'SHA-1' 기록 (일반 텍스트)
+ - /refs/heads/master 파일에 지금 생성된 commit을 포인팅하는 commit 'SHA-1' 기록 (일반 텍스트)
     주: 최초 git init후에 첫번째 commit한 내용이 /refs/heads/master에 처음으로 기록되면서 시작됨. 가장 최근의 기록만 남김.
    ※ ※ ※ 새로 branch가 생기면 /logs/refs/heads/'브랜치명', /refs/heads/'브랜치명' 이 생기며 앞에서 설명한 master와 같은 과정을 하게 됨.
            ' /refs/heads/'브랜치명' 파일이 없으면 'git checkout 브랜치명' 명령은 동작하지 않음.
