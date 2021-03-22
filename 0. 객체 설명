@@ -1,3 +1,23 @@
 1. git add 실행을 통하여 
- - blob 객체 생성 ( 위치 : .git/objects direcory에 폴더형태로 구성됨 ( 폴더명 : SHA-1 앞 2자리) 내용 : file name = SHA-1, )
- - index 생성 (staging area에 등록) ( .git/index directory에)
+ - blob 객체 생성 
+   명칭 : 폴더명 (SHA-1 앞 2자리)
+   위치 : .git/objects direcory에 폴더형태로 구성됨
+   내용 : file name, 파일내용 (압축파일형태) 
+ - index 생성 = staging area 등록과 같은 의미
+   내용 : blob 연계 SHA-1 ( = blob SHA-1)
+   위치 : .git/index 파일에 blob 연계 SHA-1을 기록 (binary file로 등록)
+
+2. commit 실행을 통하여
+ - index 생성 ?
+ - tree 객체 생성  (blob혹은 다른 tree를 포인팅하는 디렉토리 객체)
+   명칭 : 폴더명 (SHA-1 앞 2자리)
+   위치 : .git/objects direcory에 폴더형태로 구성됨
+   내용 : 
+ - commit 객체 생성
+   명칭 : 폴더명 (SHA-1 앞 2자리)
+   위치 : .git/objects direcory에 폴더형태로 구성됨
+   내용 : tree
+          parent :
+          author :
+          committer:
+          commit message :
