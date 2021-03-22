@@ -1,5 +1,10 @@
-.git init에 의하여 기본 폴더 및 
- - .git/HEAD 파일에 'ref: refs/heads/master' 기록 (euc_KR)
+.git init에 의하여 기본 폴더 및 HEAD 파일 생성
+ - .git/HEAD 파일에 'ref: refs/heads/master' 이 default로 기록됨 (일반 텍스트). 
+   주: 최초 init후에는 파일명만 있고 내용은 없음. 아래의 과정을 거쳐 최초 한번 commit한 이후에 
+   파일명에 파일내용을 추가하게 됨. 
+   항상 가장 최근의 commit 객체를 가르키게 됨.
+   즉, .git/HEAD를 통해 ref: refs/heads/master을 찾고 refs/heads/master을 통해 가장 최근의 commit 객체를 찾게 됨.
+   'git checkout' 명령을 하면 HEAD파일 내용이 바뀜 (예: 'ref: refs/heads/브랜치명' 으로)
  
 1. git add 실행을 통하여 
  - blob 객체 생성 
@@ -8,13 +13,18 @@
    내용 : 폴더내에 파일로 있음. 파일명 : SHA-1 (git add한 파일의 파일명 및 내용을 압축파일형태로 보관) 
  - index 생성 = staging area 등록과 같은 의미
    내용 : blob 연계 SHA-1 ( = blob SHA-1)
-   위치 : .git/index 파일에 blob 연계 SHA-1을 기록 (binary file로 등록)
+   위치 : .git/index 파일에 blob 연계 SHA-1을 기록. 가장 최근의 SHA-1만 기록 (binary file로 등록)
+   . add 할때마다 기록됨
 
 2. commit 실행을 통하여
- - /logs/HEAD 파일에 commit SHA-1 및 commit author 이름, 이메일, 생성일자 정보 기록 (euc_KR)
- - /logs/refs/heads/master 파일에 '/logs/HEAD 파일'과 같은 내용 생성 
- - /refs/heads/master 파일에에 commit 'SHA-1' 기록 (euc_KR)
- - .git/COMMIT_EDITMSG 파일에 commit message 기록 (euc_KR) 
+ - /logs/HEAD 파일에 commit SHA-1 및 commit author 이름, 이메일, 생성일자 정보 기록. 누적으로 기록 남김 (일반 텍스트)
+   . git checkout 결과기록 포함
+ - /logs/refs/heads/master 파일에 '/logs/HEAD 파일'과 같은 내용 생성. 누적으로 기록 남김
+ - /refs/heads/master 파일에에 지금 생성된 commit을 포인팅하는 commit 'SHA-1' 기록 (일반 텍스트)
+    주: 최초 git init후에 첫번째 commit한 내용이 /refs/heads/master에 처음으로 기록되면서 시작됨. 가장 최근의 기록만 남김.
+   ※ ※ ※ 새로 branch가 생기면 /logs/refs/heads/'브랜치명', /refs/heads/'브랜치명' 이 생기며 앞에서 설명한 master와 같은 과정을 하게 됨.
+           ' /refs/heads/'브랜치명' 파일이 없으면 'git checkout 브랜치명' 명령은 동작하지 않음.
+ - .git/COMMIT_EDITMSG 파일에 commit message 기록. 가장 최근의 기록만 남김 (일반 텍스트) 
 
  - tree 객체 생성  (blob혹은 다른 tree를 포인팅하는 디렉토리 객체)
    명칭 : 폴더명 (SHA-1 앞 2자리)
