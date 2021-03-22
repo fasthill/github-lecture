@@ -1,23 +1,30 @@
+.git init에 의하여 기본 폴더 및 
+ - .git/HEAD 파일에 'ref: refs/heads/master' 기록 (euc_KR)
+ 
 1. git add 실행을 통하여 
  - blob 객체 생성 
    명칭 : 폴더명 (SHA-1 앞 2자리)
    위치 : .git/objects direcory에 폴더형태로 구성됨
-   내용 : file name, 파일내용 (압축파일형태) 
+   내용 : 폴더내에 파일로 있음. 파일명 : SHA-1 (git add한 파일의 파일명 및 내용을 압축파일형태로 보관) 
  - index 생성 = staging area 등록과 같은 의미
    내용 : blob 연계 SHA-1 ( = blob SHA-1)
    위치 : .git/index 파일에 blob 연계 SHA-1을 기록 (binary file로 등록)
 
 2. commit 실행을 통하여
- - index 생성 ?
+ - /logs/HEAD 파일에 commit SHA-1 및 commit author 이름, 이메일, 생성일자 정보 기록 (euc_KR)
+ - /logs/refs/heads/master 파일에 '/logs/HEAD 파일'과 같은 내용 생성 
+ - /refs/heads/master 파일에에 commit 'SHA-1' 기록 (euc_KR)
+ - .git/COMMIT_EDITMSG 파일에 commit message 기록 (euc_KR) 
+
  - tree 객체 생성  (blob혹은 다른 tree를 포인팅하는 디렉토리 객체)
    명칭 : 폴더명 (SHA-1 앞 2자리)
    위치 : .git/objects direcory에 폴더형태로 구성됨
-   내용 : 
+   내용 : 파일 (파일명 : blob SHA-1)  (binary file로 등록)
  - commit 객체 생성
    명칭 : 폴더명 (SHA-1 앞 2자리)
    위치 : .git/objects direcory에 폴더형태로 구성됨
-   내용 : tree
-          parent :
+   내용 : tree (파일명과 내용을 보관하고 있는 blob 객체 혹은 또 다른 tree 객체의 집합의 SHA-1 binary 형태로 보관) 
+          parent : 부모 commit SHA-1 들
           author :
           committer:
           commit message :
