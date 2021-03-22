@@ -42,6 +42,9 @@
 - git reset --hard commit-SHA1 을 하면 commit-SHA1상태로 돌아감.
   commit 1, commit 2, commit 3, commit 4 였을 경우, git reset --hard commit 3을 하면 commit 3의 상태로 돌아감
   . commit 4는 .git/ORIG_HEAD 파일에 일반 텍스트로 SHA-1이 그대로 남아 있음.
+  . ORIG_HEAD는 위험한 명령이라고 판단되는 내용을 수행할 때는 변경하기전의 상태를 기록해 놓음.
+     'git reset --hard ORIG_HEAD'을 통하여 돌아갈 수 있음.
+     log을 알기 위하여는 git reflog 사용.
   . .git/logs/HEAD에도 기록이 모두 남아 있음.
   . .git/refs/heads/master에도 기록이 모두 남아 있음.
   . .git/logs/refs/heads/master에도 기록이 모두 남아 있음. : master 브랜치에서 발생하는 주요한 사건들을 기록해 놓음
