@@ -1,0 +1,8 @@
+git version 2.28부터는 default branch가 master branch에서 main branch로 사용하도록 추천
+
+'git config --global init.defaultBranch main' 명령실행
+
+github에서 default branch가 main으로 수정됨. 따라서 같이 수정하는 것이 좋음.
+
+초기 repository 생성시 위의 명령을 수행했으면
+'git branch -M main' 수행할 필요 없음
