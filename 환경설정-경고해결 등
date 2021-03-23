@@ -8,6 +8,8 @@
 ○ warning: LF will be replaced by CRLF in f2.txt. git add 후에 이런 경고가 나올경우
  1. 'git config --global core.autocrlf input' (git bash 사용할 경우)  ← https://dabo-dev.tistory.com/13
     윈도우 cmd 사용할 경우는 'git config --global core.autocrlf true'
+    윈도우가 아닌 linux등과 협업을 위해서는 'git config --global core.autocrlf input'
+                                          'git config --global core.safecrlf true'
 
 ○ editor 변경할 경우 (vim으로)
   1. git config --global core.editor "vim"
