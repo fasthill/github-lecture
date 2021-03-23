@@ -64,7 +64,7 @@ Carriage Return (CR)
 $ git stash
 Saved working directory and index state WIP on exp: 58f20df 1  ← WIP : Working in Process
 
-$ git branch exp
+$ git branch exp ;;; init후 발생
 fatal: Not a valid object name: 'master'.
 ← branch 목록에 master도 나오지 않고 fatal: Not a valid object name: 'master'. 이라는 에러 메세지가 발생하면서 다른 branch 생성도 되지 않는다.
 이 이유는 master branch에서 최초의 commit을 하지 않았기 때문이다. 다른 분기를 만들기 위해서는 master에서 commit을 최소 1번은 해야한다.
@@ -73,3 +73,16 @@ $ git checkout -b exp 일 경우 exp로 checkout이 되나 그 다음부터는 �
    error: pathspec 'master' did not match any file(s) known to git
 
   다 지우고 git init을 실행해야 함. (최초에 나오는 에러이니 작업한 내용은 없을 것임)
+  
+$ git remote add origin https://github.com/fasthill/gitflow.git 실행시
+error: remote origin already exists. 발생
+
+주소를 SSH로 받아서 에러가 발생. HTTPS로 받아서 재수행 하면
+$ git remote add origin https://github.com/fasthill/gitflow.git 이렇게 수행하면
+error: remote origin already exists. 발생
+
+위의 오류를 해결하는 방법은 간단하다.
+git remote remove origin을 입력해주고 다시 주소를 add해주면 된다.
+$ git remote add origin https://github.com/fasthill/gitflow.git <- 다시 수행
+
+
