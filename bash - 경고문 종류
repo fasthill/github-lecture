@@ -92,3 +92,12 @@ Automatic merge failed; fix conflicts and then commit the result.
    -> file.txt 수정후
    git commit -am 'message' 진행
 
+$ git rm hashi.py
+fatal: pathspec 'hashi.py' did not match any files
+-->
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hashi.py
+
+
+
