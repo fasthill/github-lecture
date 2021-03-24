@@ -85,4 +85,10 @@ error: remote origin already exists. 발생
 git remote remove origin을 입력해주고 다시 주소를 add해주면 된다.
 $ git remote add origin https://github.com/fasthill/gitflow.git <- 다시 수행
 
+-------
+Auto-merging file1.txt
+CONFLICT (content): Merge conflict in file1.txt
+Automatic merge failed; fix conflicts and then commit the result.  
+   -> file.txt 수정후
+   git commit -a 진행
 
