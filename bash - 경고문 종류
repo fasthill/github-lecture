@@ -90,5 +90,5 @@ Auto-merging file1.txt
 CONFLICT (content): Merge conflict in file1.txt
 Automatic merge failed; fix conflicts and then commit the result.  
    -> file.txt 수정후
-   git commit -a 진행
+   git commit -am 'message' 진행
 
