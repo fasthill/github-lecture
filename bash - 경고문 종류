@@ -94,7 +94,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 $ git rm hashi.py
 fatal: pathspec 'hashi.py' did not match any files
--->
+--> Untrack file로 그냥 윈도우에서 삭제 가능
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
         hashi.py
