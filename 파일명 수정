@@ -1,0 +1,30 @@
+Git 파일 이름 변경하기
+Git에서 파일명을 변경하고자 하는 경우 git mv 명령을 사용합니다.
+
+형식은 git mv [원본 이름] [변경할 이름] 과 같이 사용합니다.
+$ git mv myFile yourFile
+
+git status 명령으로 상태를 확인하니 파일명 수정 내역이 git add된 상태(Staged)이며, renamed 상태인 것을 알 수 있습니다.
+$ git status
+On branch master
+Changes to be committed:
+        renamed:    myFile -> yourFile
+
+참고) -s 옵션으로 확인하는 경우 R로 표기됩니다.
+$ git status -s
+R  myFile -> yourFile
+
+파일명 변경 내역을 저장소에 커밋합니다.
+$ git commit -m '파일명 변경'
+
+
+git mv 명령은 다음 세 개의 명령어를 한꺼번에 수행한것과 똑같습니다.
+$ mv myFile yourFile
+$ git rm myFile
+$ git add yourFile
+
+1. 파일명을 변경합니다.
+2. git rm 명령어로 원본 파일을 삭제했다고 Git에게 알립니다.
+3. git add 명령어로 변경된 파일명이 새로운 파일이라고 알리면서 등록합니다.
+
+출처: https://dololak.tistory.com/311 [코끼리를 냉장고에 넣는 방법]
