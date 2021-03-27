@@ -24,6 +24,8 @@ git checkout <revision number>
 
 >git reflog
 그리고, 기본적인 커밋 그래프에서는 보이지 않지만, 명령어를 잘 만들면 그래프에서도 볼 수도 있다.
+  git reflog는 HEAD의 이동경로를 모두 보여주기 때문에 
+  HEAD@{몇번전 번호}로 각 commit id를 알 수 있다. git reflog -10 (최근 10번까지 HEAD 이동 보여줌)
 
 >git log --graph --decorate $(git rev-list -g --all)
 (윈도우 사용자라면 git bash에서 실행하자.)
