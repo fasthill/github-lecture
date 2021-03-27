@@ -44,6 +44,8 @@ git checkout <revision number>
 깃이 권장하는 방법이기도 하고 이를 위해 브랜치 만드는 비용(저장공간이나 컴퓨팅 파워)가 저렴하다. 
 커밋은 브랜치에 하고 혹시 모르는 사이에 detached HEAD가 된 커밋은 브랜치를 따로 만들거나 기존 브랜치에 변경사항을 이동하도록 하자.
 
+$ git checkout -b test-branch 56a4e5c08(SHA1 hash)
+
 참조
 
 http://stackoverflow.com/questions/16368605/is-there-a-tool-to-have-git-show-detached-heads-in-a-graph
