@@ -1,0 +1,21 @@
+1. git show
+commit 정보를 확인 하는 명령어
+Commit 해시값, commit 메세지, 수정된 파일 목록, 변경 내용 등을 확인할 수 있다.
+
+git show : 현재 브랜치의 가장 최근 커밋 정보를 확인함
+git show 커밋해시값 : 특정 커밋 정보를 확인함
+git show HEAD : HEAD 포인터가 가리키는 커밋정보를 확인함
+git show 커밋해시값 또는 HEAD^:
+
+git reflog 명령
+Git에서는 reflog라는 기능이 작동 분기 끝의 업데이트를 추적 할 수 있습니다. 
+그러면 어떠한 지점에서도 어떠한 태그도 참조되지 않은 업데이트 내용도 그 시점으로 돌아갈 수 있습니다. 
+기록을 갱신 한 후에는 심지어 reflog는 지점의 과거 상태가 기록되어 있으며, 필요한 경우에는 거기에 돌아갈 수 있습니다
+사용 예
+git reflog 의 이해를 돕기 위해 하나의 예를 살펴 보자.
+0a2e358 HEAD@{0}: reset: moving to HEAD~2
+0254ea7 HEAD@{1}: checkout: moving from 2.2 to master
+c10f740 HEAD@{2}: checkout: moving from master to 2.2
+위의 reflog는 먼저 master에서 "2.2"라는 이름의 브랜치에 체크 아웃이 만들어진 다음 master 다시 있습니다. 
+그래서 hard 플래그를 지정한 취소하고 오래된 커밋으로 이동하고 있습니다. 
+reflog는 가장 새로운 로그가 위에 표시되고 HEAD @ {0} 라는 레이블이 부여됩니다.
