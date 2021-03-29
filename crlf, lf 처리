@@ -115,3 +115,21 @@ Carriage Return (CR)
 프린터나 타자기에서 사용되던 개념인데, 컴퓨터의 텍스트 파일에서도 사용되고 있습니다.
 '커서를 아래로 내리는 동작'과 '커서의 행의 맨 앞으로 보내는 동작'을 합치면, 다음 줄로 행갈이가 됩니다.
 메모장 등에서, 엔터키를 치면 다음 줄로 내려갑니다. 이때 각 줄의 끝에 바로 이 행갈이 문자가 자동으로 붙습니다.
+
+
+○ warning: LF will be replaced by CRLF in f2.txt. git add 후에 이런 경고가 나올경우
+ 1. 'git config --global core.autocrlf input' (git bash 사용할 경우)  ← https://dabo-dev.tistory.com/13
+    윈도우 cmd 사용할 경우는 'git config --global core.autocrlf true'
+    윈도우가 아닌 linux등과 협업을 위해서는 'git config --global core.autocrlf input'
+                                          'git config --global core.safecrlf true'
+                                          
+    참고 : 메모장 등의 편집기에서 글을 작성할 때, 다음 줄로 넘어가기 위해서는 키보드의 Enter 키를 입력한다. 
+    이는 리눅스, 윈도우 할 것 없이 모두 동일하다. 하지만, 내부적으로 처리되는 방식에 있어서는 차이가 있다.
+    리눅스와 윈도우는 각각 개행문자를 처리하는 방식이 다르다.
+    윈도우의 줄바꿈 문자는 CR + LF 이며, 리눅스는 LF이다.
+    CR은 Carriage Return의 약자로, 현재 라인의 시작지점으로 커서를 이동함을 의미한다.
+    LF는 Line Feed의 약자로, 다음 라인으로 커서를 이동시킨다.
+    
+    윈도우는 이 두 문자의 조합으로, 개행을 처리한다. 하지만 리눅스의 경우 CR은 따로 다루지 않으며, LF만으로 개행을 처리한다.
+    이는 윈도우에서 작성한 문서를 리눅스에서 열면, CR이 잉여문자로 나타남을 의미하며, 리눅스에서 작성한 문서를 윈도우에서 여는 경우 정상적으로 개행이 되지 않을 수 있음을 의미한다.
+    따라서, 리눅스에서 작성한 문서를 윈도우에서 열거나, 혹은 반대의 경우 별도의 처리가 필요하다.
