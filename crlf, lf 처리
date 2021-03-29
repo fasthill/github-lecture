@@ -4,6 +4,43 @@ git config --global core.autocrlf input
 git config --global core.autocrlf true
 # Set this setting on Windows
 --------------------------------------------------------
+FYI., By default, Line ending in Windows will take CRLF and Linux will take LF. Please find the below table for clear understanding.
+
+╔═══════════════╦══════════════╦══════════════╦══════════════╗
+║ core.autocrlf ║    false     ║    input     ║    true      ║
+║               ║ Win => Unix  ║ Win => Unix  ║ Win => Unix  ║
+╠═══════════════╬══════════════╬══════════════╬══════════════╣
+║   git commit  ║ LF => LF     ║ LF => LF     ║ LF => LF     ║
+║               ║ CR => CR     ║ CR => CR     ║ CR => CR     ║
+║               ║ CRLF => CRLF ║ *CRLF => LF  ║ *CRLF => LF  ║
+╠═══════════════╬══════════════╬══════════════╬══════════════╣
+║  git checkout ║ LF => LF     ║ LF => LF     ║ *LF => CRLF  ║
+║               ║ CR => CR     ║ CR => CR     ║ CR => CR     ║
+║               ║ CRLF => CRLF ║ CRLF => CRLF ║ CRLF => CRLF ║
+╚═══════════════╩══════════════╩══════════════╩══════════════╝
+Expand snippet
+In the above tabular information, the symbol * highlights the differences between Windows and Unix. 
+At a glance, below is the CLRF information based on the OS platforms:
+
+For Windows users
+   If windows users working with cross-platform projects, 
+   It MUST be core.autocrlf=true for Windows machines and core.autocrlf=input for Unix machines.
+   
+   If windows users work with Only Windows projects, It can be both core.autocrlf=true or core.autocrlf=false. 
+   But core.autocrlf=input will result in issues in this case.
+   
+For Unix users (Linux / Mac OS)
+   If Unix users working with cross-platform projects, 
+   It MUST be core.autocrlf=true for Windows machines and core.autocrlf=input for Unix machines.
+   
+   If Unix users work with Only Unix projects, It can be both core.autocrlf=input or core.autocrlf=false. 
+   But core.autocrlf=true will result in issues in this case.
+   
+For same OS users
+   For a pure Windows project or pure Unix project, it can be core.autocrlf=false.
+
+출처 : https://stackoverflow.com/questions/4181870/git-on-windows-what-do-the-crlf-settings-mean
+---------------------------------------------------------
 
 https://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows/13154031#13154031
 
