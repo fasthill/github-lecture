@@ -1,4 +1,10 @@
-꼭 볼것:
+git config --global core.autocrlf input
+# Set this setting on OSX or Linux
+
+git config --global core.autocrlf true
+# Set this setting on Windows
+--------------------------------------------------------
+
 https://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows/13154031#13154031
 
 [Git] warning: LF will be replaced by CRLF in README.md.
