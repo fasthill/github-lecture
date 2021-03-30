@@ -10,4 +10,14 @@ A 라는 github 아이디로 '최초' 글로벌 유저 등록을 했고,
 ※ 여기서 원하는건 B 라는 github 아이디로 push를 진행하고 싶을 때 입니다.
 window , mac 에서 해결 방법 모두 설명함 
 
+제어판 - 자격증명 관리자 - 윈도우 자격증명 - 일반 자격증명 -github 관련 내용 선정후 수정하거나 모두 삭제 저장 후
+다시 github 연결시도하면 새로운 질문에 대한 답변으로 진행하면 됨.
+
 https://recoveryman.tistory.com/392
+
+username의 변경은
+working diredtory에서 git init한후에
+git config user.name, user.email 수정후 진행해야 바뀐 사용자명으로 기록됨.
+반드시 init한후에 바로 수정해야 함.
+remote push 할 때 영향을 줌. github에서는 여기에서 사용된 username을 기준으로
+github에 등록된 username과 일치된 정보(profile 등)을 찾아 github화면에 display 해줌
