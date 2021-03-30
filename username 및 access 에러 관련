@@ -1,0 +1,13 @@
+
+The requested URL returned error: 403
+remote: Permission to~~~~~ 403 에러
+
+계속 적는 거긴 하지만..
+A 라는 github 아이디로 '최초' 글로벌 유저 등록을 했고,
+나중에 B 라는 아이디로 다시 글로벌 유저등록해서 B 아이디로 push를 진행하려 할 때,
+그 push의 시점은 여전히 A 라는 github 아이디를 찾고 있습니다.
+
+※ 여기서 원하는건 B 라는 github 아이디로 push를 진행하고 싶을 때 입니다.
+window , mac 에서 해결 방법 모두 설명함 
+
+https://recoveryman.tistory.com/392
