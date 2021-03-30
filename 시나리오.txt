@@ -1,0 +1,27 @@
+프로젝트명 : 배재대 지도 만들기 (paichaisw) masto
+
+요약
+
+
+스마트배재관 소개 (sibling) : 권한 읽기 쓰기 sibling 
+
+
+
+21세기관 소개 (fasthill) : 읽기 fasthill
+
+1. Git에서 먼저 기초 프로젝트 생성
+텍스트 문서 작성 (제목: 배재대학교 설명하기)
+
+
+업무 소개 (read me)
+
+업무 분할
+
+공동참여자 선발 및 역할 부여
+
+각자 local에서 작업
+브랜치명 : main (masto)
+
+브랜치 명: main, feature-sb (sibling)
+
+브랜치 명: main, feature-21c (fasthill)
