@@ -15,9 +15,3 @@ window , mac 에서 해결 방법 모두 설명함
 
 https://recoveryman.tistory.com/392
 
-username의 변경은
-working diredtory에서 git init한후에
-git config user.name, user.email 수정후 진행해야 바뀐 사용자명으로 기록됨.
-반드시 init한후에 바로 수정해야 함.
-remote push 할 때 영향을 줌. github에서는 여기에서 사용된 username을 기준으로
-github에 등록된 username과 일치된 정보(profile 등)을 찾아 github화면에 display 해줌
