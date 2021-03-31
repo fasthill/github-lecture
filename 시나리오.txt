@@ -1,7 +1,7 @@
 프로젝트명 : 배재대 지도 만들기 (paichaisw) masto
 
 요약
-git config --global core.autocrlf  true
+
 
 스마트배재관 소개 (sibling) : 권한 읽기 쓰기 sibling 
 
@@ -20,15 +20,12 @@ git config --global core.autocrlf  true
 공동참여자 선발 및 역할 부여
 
 각자 local에서 작업
+
 브랜치명 : main (masto)
 
-브랜치 명: main, feature-sb (sibling) daum
+브랜치 명: main, feature-sb (sibling)
+브랜치로 push
 
-브랜치 명: main, feature-21c (fasthill) naver
-농협 785 02 008044
+브랜치 명: main, feature-21c (fasthill)
+브랜치로 push
 
-$ git push -u origin main
-remote: Permission to paichaisw/usert.git denied to fasthill.
-fatal: unable to access 'https://github.com/paichaisw/usert.git/': The requested URL returned error: 403
-
-사용자 계정 -> 자격증명관리자
