@@ -1,0 +1,53 @@
+출처 : https://blog.outsider.ne.kr/1505
+
+Git에 어느 정도 익숙하기에 새로운 기능이 나와도 일일이 테스트해보거나 자세히 확인해 보지 않았다. 
+얼마 전에 Git 2.23에서 checkout을 대신할 switch, restore가 도입된 것을 알게 되었고 언제부터인지는 
+모르지만 git --help에도 checkout 명령어가 안 나온다는 것을 알게 되었다.
+
+도입할 때는 실험적으로 들어온 것 같지만 정식으로 자리 잡은 것 같아서(이 부분에 대한 히스토리는 못 찾겠다.) 
+불편함이 없음에도 변화에 따라 나도 checkout을 벗어나야겠다고 생각했다. 
+기존의 Git 교육자료도 다 checkout으로 되어 있고 가끔 발표나 시연할 때도 
+checkout을 계속 사용하면 새로 Git을 배우는 사람들이 헷갈릴 것 같기도 해서...
+ 
+checkout이 대체된 이유는 하나의 명령어가 가진 기능이 너무 많기 때문이다. 
+문서에 나온 정의도 다음과 같이 명확히 분리한 것을 알 수 있다.
+
+checkout: Switch branches or restore working tree files
+switch: Switch branches
+restore: Restore working tree files
+
+git switch
+switch는 위 설명대로 checkout에서 브랜치를 변경하는 부분만 담당한다.
+
+이전에는 git checkout <BRANCH_NAME>으로 브랜치를 변경했지만 이젠 switch로 변경한다. 명령어만 달라졌고 사용 방법은 같다.
+
+$ git switch develop
+'develop' 브랜치로 전환합니다
+브랜치가 'upstream/develop'에 맞게 업데이트된 상태입니다
+
+내가 많이 사용하는 브랜치를 새로 만들면서 브랜치 변경까지 하는 git checkout -b <BRANCH_NAME>도 -c 옵션으로 똑같이 사용할 수 있다.
+$ git switch -c new-branch
+새로 만든 'new-branch' 브랜치로 전환합니다
+
+브랜치를 어디서 만들지는 지정하지 않았으므로 HEAD가 사용되었는데 특정 브랜치나 커밋에서 새로운 브랜치를 만들고 싶으면 브랜치 이름 뒤에 커밋을 지정해 주면 된다.
+$ git switch -c new-branch2 515c633a
+새로 만든 'new-branch2' 브랜치로 전환합니다
+
+
+git restore
+restore는 워킹 트리의 파일을 복원해 주는 역할을 한다.
+
+파일의 수정 내용(README.md 파일을 수정했다고 했을 때)을 복원하려면 
+git checkout -- README.md처럼 사용했는데 이젠 다음과 같이 사용할 수 있다. 
+명확하지 않은 checkout --보다는 restore가 더 낫다고 생각한다.
+$ git restore README.md
+git add를 통해서 수정 내용을 stage에 이미 넣었을 때 이를 다시 빼려면 git reset HEAD README.md를 
+사용했어야 했는데 이 부분도 restore로 들어왔다. 수정사항을 빼고 조작할 때 모두 restore로 통일되어서 사용하기도 쉬울 테고 이해하기도 좋다.
+$ git restore --staged README.md
+
+물론 Git은 안내메시지가 잘 되어 있어서 나오는 명령어만 잘 따라 해도 되지만 익숙한 명령어는 잘 바꾸게 되지 않아서 정리를 해봤다. 
+사실 너무 사용법이 똑같아서 왜 미루고 있었나 싶을 정도로 간단하다. 
+아직 손에 안 붙어서 switch,restore가 바로바로 입력되진 않고 있고 별칭으로 co = checkout을 설정해서 checkout을 다 입력하지 않고 있었는데 여기도 별칭을 고민해 봐야겠다.
+
+ 2020/10/21 01:55
+ 
