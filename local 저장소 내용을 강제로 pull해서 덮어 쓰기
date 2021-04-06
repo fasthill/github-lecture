@@ -1,0 +1,4 @@
+git checkout main
+git branch new-branch-to-save-current-commits # 덮어 쓰기 전에 혹시 모르니 원본 저장을 위한 브랜치 생성
+git fetch --all # git fetch origin --all 
+git reset --hard origin/main # fetch된 위치로 되돌리기
