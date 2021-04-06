@@ -1,0 +1,3 @@
+2명이 동시에 진행
+collaborator 등록
+collab 들이 clone후 주관자가 첫번째 수정 등록

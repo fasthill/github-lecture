@@ -1,0 +1,7 @@
+2명이 동시에 진행
+collaborator 등록
+collab 들이 clone후 주관자가 첫번째 수정 등록
+여기서 다시 수정 by collab(6th) by 2nd collab 순서를 바꾸고
+여기에 중간에 집어넣고 한줄이 아니고 추가(7th)
+한쪽 여기도 바꿈 기에 한줄 추가(7th) (8th)
+리더가 수정
