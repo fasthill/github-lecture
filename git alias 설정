@@ -1,0 +1,5 @@
+git config --global alias.logm 'log --graph --all --oneline --date-order'
+
+in ~/.gitconfig
+[alias]
+	logm = log --graph --all --oneline --date-order
