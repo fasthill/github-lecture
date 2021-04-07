@@ -3,3 +3,12 @@ git을 사용하다 브랜치 전체를 clone하지 않고 특정 브랜치 하�
 git clone -b {branch_name} --single-branch {저장소 URL}
 ex) git clone -b javajigi --single-branch https://github.com/javajigi/java-racingcar
 위와 같이 실행하면 java-racingcar의 javajigi branch만 clone할 수 있다.
+
+특정한 브랜치만 clone할 경우
+clone a remote Git repository and cd into it:
+$ git clone git://example.com/myproject
+$ cd myproject
+
+전체 브랜치 pull할 경우
+git fetch --all
+git pull --all
