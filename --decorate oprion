@@ -1,0 +1,69 @@
+이전버젼에는 차이가 있었으나,
+지금은 default로 사용되고 있어 차이가 없음.
+git log = git log --decorate
+차이를 알고 싶다면 git log --decorate=false를 하여 보면 알 수 있음 (아래 예제)
+--- HEAD의 위치, 브랜치의 명칭등의 유무 차이가 있음. --
+
+
+user@DESKTOP-C0L70DN MINGW64 /c/workspace/gitplace - 복사본 (main)
+$ git log --oneline --decorate=false
+c4d47d1 merge message
+885c093 yyy
+9cc5a3c cherry picking
+f715f5e change add 9 feature story from feature-1
+69138cd merge test
+ab9de32 add 9 feature story from feature-1
+9e2cfb9 numbering main story from main
+68be8fb second Merge branch 'feature-1'
+d7f16d4 feature story add from feature-1
+82299d9 main story from main
+57560ec first Merge branch 'feature-1'
+c7baf0e p3.txt from main
+8d6b0ed commit2 from feature-1
+e2793fa p2.txt from feature-1
+431caea commit1 from feature-1
+fd13417 work allocation commit
+46a8306 second commit
+57d970c first commit
+
+user@DESKTOP-C0L70DN MINGW64 /c/workspace/gitplace - 복사본 (main)
+$ git log --oneline --decorate
+c4d47d1 (HEAD -> main) merge message
+885c093 (feature-1) yyy
+9cc5a3c cherry picking
+f715f5e change add 9 feature story from feature-1
+69138cd merge test
+ab9de32 add 9 feature story from feature-1
+9e2cfb9 numbering main story from main
+68be8fb second Merge branch 'feature-1'
+d7f16d4 feature story add from feature-1
+82299d9 main story from main
+57560ec (tag: v2.0, tag: show) first Merge branch 'feature-1'
+c7baf0e p3.txt from main
+8d6b0ed commit2 from feature-1
+e2793fa p2.txt from feature-1
+431caea commit1 from feature-1
+fd13417 (tag: v1.0) work allocation commit
+46a8306 second commit
+57d970c first commit
+
+user@DESKTOP-C0L70DN MINGW64 /c/workspace/gitplace - 복사본 (main)
+$ git log --oneline
+c4d47d1 (HEAD -> main) merge message
+885c093 (feature-1) yyy
+9cc5a3c cherry picking
+f715f5e change add 9 feature story from feature-1
+69138cd merge test
+ab9de32 add 9 feature story from feature-1
+9e2cfb9 numbering main story from main
+68be8fb second Merge branch 'feature-1'
+d7f16d4 feature story add from feature-1
+82299d9 main story from main
+57560ec (tag: v2.0, tag: show) first Merge branch 'feature-1'
+c7baf0e p3.txt from main
+8d6b0ed commit2 from feature-1
+e2793fa p2.txt from feature-1
+431caea commit1 from feature-1
+fd13417 (tag: v1.0) work allocation commit
+46a8306 second commit
+57d970c first commit
