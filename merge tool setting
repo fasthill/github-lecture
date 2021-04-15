@@ -1,0 +1,72 @@
+(요거!) https://teddylee777.github.io/git/study-git-2   
+
+https://sigcho.tistory.com/37
+
+http://rapapa.net/?p=92
+(아래)
+git merge tool, 머지 툴 셋팅 방법
+admin 「개발 이야기」 0 Comments
+
+git을 사용하시다보면 늘상 발생하는 것이 conflict입니다.
+git merge tool을 기본적으로 제공하는 것을 사용하는 것도 괜찮지만 저는
+
+Diffmerge 를 사용했습니다. 무료에 3 window 머지를 지원하는 굉장히 편한 툴입니다.
+
+
+
+git merge tool 셋팅 방법은 아래와 같습니다.
+
+먼저 diffmerge를 다운 받으신 후에 설치하시면
+mac의 경우 자동 환경 변수에 저장이 되고요,
+윈도우의 경우엔 환경 설정 변수에 실행 파일 경로를 추가해주셔야 할겁니다.
+
+[bash]
+git config –global merge.tool diffmerge
+git config –global mergetool.diffmerge.cmd "diffmerge –merge –result=\$MERGED \$LOCAL \$BASE \$REMOTE"
+git config –global mergetool.diffmerge.trustExitCode true
+
+[/bash]
+
+이렇게 명령을 주시면 됩니다.
+
+그 이후는 merge conflict가 난 시점에
+
+[bash]
+git mergetool
+[/bash]
+
+명령을 주시면 자동으로 diffmerge가 뜨면서
+머지를 할 수 있게 해 줍니다.
+
+기본적으로 3 Window merge이고
+가운데 파일이 실제 저장 파일이므로
+자기의 현재 working tree file과 remote에서 받은 file과 잘 비교해서
+가운데 파일에 머지 작업을 해주시면 됩니다.
+
+추가로…
+이렇게 머지 작업을 하시면
+작업 완료 후에 diffmerge를 종료하면 엄청나게 많은 백업 파일들이
+해당 디렉토리에 생성된 것을 볼 수 있는데요,
+
+이런 연고로 백업 파일을 만들지 않는 옵션을 주셔야 합니다.
+아래와 같은 명령을 주시면 간단히 해결됩니다.
+
+[bash]
+git config –global mergetool.keepBackup false
+[/bash]
+
+merge 툴  뿐아니라 diff 툴도 diffmerge로 셋팅할 수 있는데
+아래와 같이 하시면 됩니다.
+
+[bash]
+git config –global diff.tool diffmerge
+git config –global difftool.diffmerge.cmd "diffmerge \$LOCAL \$REMOTE"
+[/bash]
+
+이제 머지툴 뿐아니라 diff 툴도 diffmerge로 가능~~~
+
+[bash]
+git difftool master~1 foo.rb
+[/bash]
+
+.
