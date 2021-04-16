@@ -1,0 +1,13 @@
+Use "working tree" instead of "working directory" for git status
+
+Working directory can be easily confused with the current directory.
+In one of my patches I already updated the usage of working directory
+with working tree for the man page but I noticed that git status also
+uses this incorrect term.
+
+Signed-off-by: Lars Vogel <Lars.Vogel@vogella.com>
+Signed-off-by: Junio C Hamano <gitster@pobox.com>
+
+from: https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343
+
+https://stackoverflow.com/questions/39128500/working-tree-vs-working-directory
